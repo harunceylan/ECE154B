@@ -6,7 +6,9 @@
 
 `define SIM
 
-`define ASSERT(CONDITION, MESSAGE) if (!(CONDITION)) begin $error($sformatf MESSAGE); end
+`define ASSERT(CONDITION, MESSAGE)    \
+  if (!(CONDITION))                    \
+    $error($sformatf MESSAGE);
 
 module ucsbece154b_top_tb ();
 
