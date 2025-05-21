@@ -65,8 +65,7 @@ module ucsbece154b_controller (
    case (op_i)
 	instr_lw_op:        maindecoderD = 12'b1_000_1_0_01_0_00_0;       
 	instr_sw_op:        maindecoderD = 12'b0_001_1_1_00_0_00_0; 
-	instr_Rtype_op:     maindecoderD = 12'b1_xxx_0_0_00_0_10_0;  
-	instr_branch_op:    maindecoderD = 12'b0_010_0_0_00_1_01_0;  
+	instr_Rtype_op:     maindecoderD = 12'b1_xxx_0_0_00_0_10_0;    
 	instr_ItypeALU_op:  maindecoderD = 12'b1_000_1_0_00_0_10_0; 
 	instr_jal_op:       maindecoderD = 12'b1_011_x_0_10_0_xx_1; 
         instr_lui_op:       maindecoderD = 12'b1_100_x_0_11_0_xx_0; 
@@ -87,7 +86,7 @@ module ucsbece154b_controller (
  always @ * begin
   case(ALUOpD)
     ALUop_mem:                 ALUControlD = ALUcontrol_add;
-    ALUop_beqbne:              ALUControlD = ALUcontrol_sub;
+    ALUop_beq:                 ALUControlD = ALUcontrol_sub;
     ALUop_other: 
        case(funct3_i)
            instr_addsub_funct3: 
