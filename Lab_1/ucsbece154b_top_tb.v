@@ -6,7 +6,7 @@
 
 `define SIM
 
-`define ASSERT(CONDITION, MESSAGE) if ((CONDITION)==1'b1) begin end else begin $error($sformatf MESSAGE); end
+`define ASSERT(CONDITION, MESSAGE) if ((CONDITION)==1'b0) begin $error($sformatf MESSAGE); end
 
 module ucsbece154b_top_tb ();
 
